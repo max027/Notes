@@ -3,7 +3,7 @@
 practice for tracking  and managing changes made to code and other files.
 
 
-## types of versin control
+## Types of Version control
 * Centralized version control
 * Distributed version control
 
