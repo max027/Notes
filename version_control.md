@@ -32,3 +32,24 @@ Tree Object is a container for all the files and folders in the project. It cont
 ## Blobs
 Blob Object is present in the tree object and contains the actual file content. This is the place where the file content is stored.
 
+## Head
+* The HEAD is a pointer to the current branch that you are working on. 
+
+## Branches
+* Branches are a way to work on different versions of a project at the same time.
+
+```cmd
+git branch
+git branch bug-fix
+git switch bug-fix
+git log
+git switch master
+git switch -c dark-mode
+git checkout orange-mode
+```
+
+## Merging branch
+```cmd
+git checkout main
+git merge bug-fix
+```
