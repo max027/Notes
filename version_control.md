@@ -53,3 +53,56 @@ git checkout orange-mode
 git checkout main
 git merge bug-fix
 ```
+
+## Git diff
+The git diff is an informative command that shows the differences between two commits. 
+It is used to compare the changes made in one commit with the changes made in another commit.
+How to read the diff
+* a -> file A and b -> file B
+* ---- indicates the file A
+* +++ indicates the file B
+* @@ indicates the line number
+
+```cmd
+git diff
+git diff --staged
+git diff <branch-name-one> <branch-name-two>
+git diff <commit-hash-one> <commit-hash-two>
+```
+
+
+## Stash
+Stash is a way to save your changes in a temporary location. It is useful when you want to make 
+changes to a file but don’t want to commit them yet
+
+```cmd
+git stash
+git stash save "work in progress on X feature"
+git stash list
+git stash apply
+git stash apply stash@{0}
+git stash drop
+git stash clear
+```
+
+## Rebase
+Git rebase is a powerful Git feature used to change the base of a branch.
+It effectively allows you to move a branch to a new starting point, usually a different commit, by “replaying” 
+the commits from the original base onto the new base. 
+This can be useful for keeping a cleaner, linear project history.
+
+```cmd
+git checkout feature-branch
+git rebase main
+```
+
+## Git reflog
+Git reflog is a command that shows you the history of your commits.
+It allows you to see the changes that you have made to your repository over time.
+
+
+```cmd
+git reflog
+git reflog <commit-hash>
+```
+
