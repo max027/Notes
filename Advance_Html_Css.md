@@ -27,4 +27,14 @@ The <datalist> tag specifies a list of pre-defined options for an <input> elemen
 
 
 
-
+### Flexbox
+* Flexbox is single-dimensional, which means you can align it either along a row or a column and it is set to row alignment by default.
+* For the items present inside the flexbox container, the placement starts from the top-left corner moving along the main or horizontal axis
+    - Alignment properties
+        - justify-content. For item alignment on main axis.
+        - align-items. For item alignment on cross axis.
+        - align-self. For unique flex items on cross axis.
+        - align-content. Used for packing flex lines and control over space.
+        - flex-direction:This property is used to set the main axis, which is a ‘row’ by default. It basically means you are changing your ‘main’ axis from horizontal rows to vertical columns. 
+        - gap:gap property can be used to create space between the items along the main axis.
+        - flex:
