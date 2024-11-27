@@ -37,4 +37,14 @@ The <datalist> tag specifies a list of pre-defined options for an <input> elemen
         - align-content. Used for packing flex lines and control over space.
         - flex-direction:This property is used to set the main axis, which is a ‘row’ by default. It basically means you are changing your ‘main’ axis from horizontal rows to vertical columns. 
         - gap:gap property can be used to create space between the items along the main axis.
-        - flex:
+        - flex-basis: sets initial size of element
+        - flex-grow: sets how element will grow
+        - flex-shrink: sets how element will shrink
+
+### Grid
+* A grid will allow you organize the various elements on your page. 
+* grid-template-rows: none
+    - This feature allows you configure your elements so that they are organized similarly to rows on a table.
+* grid-template-columns: none
+    - This feature allows you configure your elements but with this setting the elements are organized like columns on a table.
+
