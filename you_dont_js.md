@@ -47,4 +47,16 @@ and ES6’s symbol
 * Compound values—objects (including arrays, and all boxed object wrappers) and functions—always create a copy of
 the reference on assignment or passing.
 
+## Internal [[Class]]
+* Values that are typeof of "object" (such as an array) are additionally tagged with an internal [[Class]] property (think of this more
+as an internal classification rather than related to classes from traditional class-oriented coding)
 
+## Boxing Wrappers
+* Primitive values don’t have properties or methods, so to access .length or .toString() you need an object wrapper around the value
+* using the boxed object wrapper directly is usually discouraged
+* There’s practically no reason to ever use the new Object() constructor form, especially since it forces you to add properties one by one
+instead of many at once in the object literal form.
+
+## Native Prototypes
+* Each of the built-in native constructors has its own .prototype object — Array.prototype, String.prototype, etc.
+These objects contain behavior unique to their particular object subtype.
