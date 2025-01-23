@@ -37,6 +37,57 @@ N = 10000, O(10N) = 100,000, O(N^2) = 100,000,000 // 1000x bigger
 
 3.Worst case is usually we measure
 
+# Search
+## Linear Search
+In linear search we scan our dataset one element at a time , and check if the given element is our target
+### Time complexity
+Linear O(N) - because at worst case we scan our entire dataset and we dont find the given target
+### Javascript code 
+```
+function Linear(arr,target){
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]===target){
+            return true
+        }
+    }
+    return false
+}
+```
+
+
+## Binary Search
+It only work on sorted dataset.Instead of scanning entire dataset one element at time, we check middle element, if the middle element is our target then we found our target.
+If not then we check wheather our target element is smaller than middle then we check our left portion of dataset,else we check right portion of dataset
+
+### Time complexity
+O(log n) - because we check middle element then we half our dataset. 
+
+### Javascript code 
+```
+function Binary_search(arr,target){
+    let l=0;
+    let r=Math.floor(arr.length-1)
+    while (l<r){
+        let mid=(l+(r-l))/2
+        if(arr[mid]===target){
+            return true
+        }else if(arr[mid]>target){
+            r=mid
+        }else{
+            l=mid+1
+        }
+    }
+    return false
+}
+```
+
+
+
+# Arrays
+Arrays are fixed sized collection of same type of element arrange continiguous in manner
+## properties
+Arrays cant grows or shrink because They are fixed size, continiguous memory chunks
+
 
 
 
