@@ -43,7 +43,7 @@ In linear search we scan our dataset one element at a time , and check if the gi
 ### Time complexity
 Linear O(N) - because at worst case we scan our entire dataset and we dont find the given target
 ### Javascript code 
-```
+```Javascript
 function Linear(arr,target){
     for(let i=0;i<arr.length;i++){
         if(arr[i]===target){
@@ -63,7 +63,7 @@ If not then we check wheather our target element is smaller than middle then we 
 O(log n) - because we check middle element then we half our dataset. 
 
 ### Javascript code 
-```
+```Javascript
 function Binary_search(arr,target){
     let l=0;
     let r=Math.floor(arr.length-1)
@@ -82,13 +82,58 @@ function Binary_search(arr,target){
 ```
 
 
-
 # Arrays
 Arrays are fixed sized collection of same type of element arrange continiguous in manner
 ## properties
 Arrays cant grows or shrink because They are fixed size, continiguous memory chunks
 
+# Linked List
+## Disadvantage of arrays
+* Insertion
+* Deletion
+* Ungrowable
 
+Linkedlist is also called Node based datastructure.
+
+Node contain two thing 
+1. Value
+2. Reference to another node
+
+Head is first Node in linked list
+Tail is last Node in linkedlist
+Insertion and Deletion can be very fast in linkedlist
+In order to access the element you have to traverse the list because there are no index
+
+## Singly Linkedlist
+In sligly linkedlist we have a node containing value and reference to next node.In sligly linkedlist you can only traverse forward not in both direction.
+## javascript code for singly linkedlist 
+```javascript
+class Node{
+    constructor(element){
+        this.element=element
+        this.next=null
+    }
+}
+```
+
+## Doubly Linkedlist
+In Doubly linkedlist we have a node containing value and reference to next and previous node.In Doubly linkedlist you can traverse in both direction
+## javascript code for doubly linkedlist 
+```javascript
+class Node{
+    constructor(element){
+        this.element=element
+        this.next=null
+        this.prev=null
+    }
+}
+```
+
+Operations on linkedlist
+1. Insertion at head or tail
+2. Insertion at middle
+3. Deletion at head or tail
+4. Deletion at middle
 
 
 
