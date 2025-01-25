@@ -48,4 +48,38 @@ The <datalist> tag specifies a list of pre-defined options for an <input> elemen
 * grid-template-columns: none
     - This feature allows you configure your elements but with this setting the elements are organized like columns on a table.
 
+### Different css selectors
+1. Element selector
+2. Id selector
+3. Class selector
+4. Attribute selector
+5. nth-of-type selector
+6. nth-child  selector
+7. star selector
+
+### Specificity hierarchy
+CSS has a set of rules that it uses to ‘score’ or assign a certain weight to selectors and this creates a specificity hierarchy. Based on the weights, there are four categories in this hierarchy: 
+1. Inline styles 
+2. IDs 
+3. Classes, attributes, and pseudo-classes 
+4. Elements and pseudo-elements 
+
+guidelines and rules that become important especially in cases when the score for the different selectors is the same. Some of these are:
+* Every selector will have a score and place in the hierarchy
+* In the case of selectors with equal specificity, the latest or last written rule is the one that will be applied
+* In general, ID selector should be applied in cases where you need to be certain about a rule 
+* Universal selectors have zero specificity value
+
+### Combination selector
+1. Descendent selector
+Description: Selects all elements (B) that are descendants (children, grandchildren, or further nested levels) of a specified element (A).
+
+2. child selector
+Description: Selects all elements (B) that are direct children of a specified element (A).
+
+3. General sibling selector
+Description: Selects all elements (B) that are siblings of a specified element (A) and come after it, not necessarily immediately.
+
+4. Adjecant selector
+Description: Selects the first element (B) that is immediately preceded by another element (A).
 
