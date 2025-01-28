@@ -136,4 +136,31 @@ Operations on linkedlist
 4. Deletion at middle
 
 
+# Queue
+A Queue is specific implementation of linkedlist
+
+* Queue operate on principle of first in first out , that mean element that is inserted first will be first to get deleted
+* In Queue we add at tail and remove at head
+
+## javascript code for Queue
+```javascript
+class Queue {
+    constructor() {
+        this.items = {}
+        this.frontIndex = 0
+        this.backIndex = 0
+    }
+}
+```
+
+# Stack
+
+Just like queue stack are specific implementation of linkedlist
+
+* Stack work on principle of last in first out , that mean element that was inserted last will be first to removed
+* In stack we add and remove at head
+
+# Arrays vs linkedlist
+* Traversal : In array you have indices access while in linkedlist you dont.That means in linkedlist you have to traverse one node at time to get specific node
+* Insertion and Deletion: In linkedlist Insertion and Deletion is constant time, you only assign and reassign links.While in array you dont insert or delete because of fixed size,you only shift and unshift.
 

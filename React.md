@@ -1,5 +1,10 @@
-* Jsx allows developers to write html directly inside javascript code
-* html code inside return must be wrape inside top level html tags
+# Component
+* React applications are built from isolated pieces of UI called components. A React component is a JavaScript function that you can sprinkle with markup.
+* Components can be as small as a button, or as large as an entire page
+* Each React component is a JavaScript function that may contain some markup that React renders into the browser. 
+## Props
+* React components use props to communicate with each other.
+* Props might remind you of HTML attributes, but you can pass any JavaScript value through them, including objects, arrays, functions, and even JSX!
 
 # props.children
 * The { props.children } property allows you to create a generic template component that can be modified by 

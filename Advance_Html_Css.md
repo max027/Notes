@@ -83,3 +83,13 @@ Description: Selects all elements (B) that are siblings of a specified element (
 4. Adjecant selector
 Description: Selects the first element (B) that is immediately preceded by another element (A).
 
+## Pseudo-classes
+A CSS pseudo-class is a keyword added to a selector that lets you style a specific state of the selected element(s).
+### Syntax
+```css
+selector:pseudo-element {
+ property: value; 
+}
+```
+
+
