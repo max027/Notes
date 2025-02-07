@@ -164,3 +164,44 @@ Just like queue stack are specific implementation of linkedlist
 * Traversal : In array you have indices access while in linkedlist you dont.That means in linkedlist you have to traverse one node at time to get specific node
 * Insertion and Deletion: In linkedlist Insertion and Deletion is constant time, you only assign and reassign links.While in array you dont insert or delete because of fixed size,you only shift and unshift.
 
+
+# Recursion
+A function that keeps calling itself until it reach a base condition
+
+Recursion can be broken down into 2 steps 
+1. base case
+2. recurse
+
+A good Base case is important for recursion, othervise recursion will exceed the stack limits
+
+## Example of Recursion in javascript
+```javascript
+function add(n){
+    if(n===1){
+        return 1 
+    }
+    return n+add(n-1)
+}
+```
+
+# Divide and conqure
+Divide and Conquer Algorithm is a problem-solving technique used to solve problems by dividing the main problem into subproblems, solving them individually and then merging them to find solution to the original problem
+
+# Quick sort
+In quick sort we first select pivot and put element less than or equal to pivot on left side and element greater than on right side
+then we split our array into two left side of pivot and right side of pivot and repeat entire process.
+
+
+# Tree
+trees are a type of data structure used to represent hierarchical relationships
+* Root
+    * The top node of the tree. It is the starting point of traversal.
+* Leaf
+    *  A node that has no children.
+* Height
+    * The length of the longest path from a node to a leaf node.
+
+# Traversal
+* pre order
+* post order
+* in order

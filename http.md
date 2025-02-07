@@ -83,3 +83,14 @@ Age: 7
 </body>
 </html>
 ```
+
+## Http Post
+POST is used to send data to a server to create/update a resource.
+The data sent to the server with POST is stored in the request body of the HTTP request:
+
+
+## Http Put 
+PUT is used to send data to a server to create/update a resource.
+The difference between POST and PUT is that PUT requests are idempotent.
+That is, calling the same PUT request multiple times will always produce the same result.
+In contrast, calling a POST request repeatedly have side effects of creating the same resource multiple times.

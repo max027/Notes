@@ -50,6 +50,18 @@ the reference on assignment or passing.
 ## Internal [[Class]]
 * Values that are typeof of "object" (such as an array) are additionally tagged with an internal [[Class]] property (think of this more
 as an internal classification rather than related to classes from traditional class-oriented coding)
+* This property cannot be accessed directly, but can generally can be revealed indirectly by borrowing the default Object.prototype.toString(..) method called against the value.
+```javascript
+Object.prototype.toString.call( [1,2,3] );
+// "[object Array]"
+Object.prototype.toString.call( /regex-literal/i );
+// "[object RegExp]"
+Object.prototype.toString.call( null );
+// "[object Null]"
+Object.prototype.toString.call( undefined );
+// "[object Undefined]"
+```
+* You’ll note that there are no Null() or Undefined() native con‐ structors, but nevertheless "Null" and "Undefined" are the internal [[Class]] values exposed.
 
 ## Boxing Wrappers
 * Primitive values don’t have properties or methods, so to access .length or .toString() you need an object wrapper around the value
@@ -57,6 +69,46 @@ as an internal classification rather than related to classes from traditional cl
 * There’s practically no reason to ever use the new Object() constructor form, especially since it forces you to add properties one by one
 instead of many at once in the object literal form.
 
+## Object Wrapper Gotchas
+```javascript
+var a = new Boolean( false );
+if (!a) {
+ console.log( "Oops" ); // never runs
+}
+```
+* The problem is that you’ve created an object wrapper around the false value, but objects themselves are “truthy”
+## Unboxing
+* If you have an object wrapper and you want to get the underlying primitive value out, you can use the valueOf() method
+```javascript
+var a = new String( "abc" );
+var b = new Number( 42 );
+var c = new Boolean( true );
+a.valueOf(); // "abc"
+b.valueOf(); // 42
+c.valueOf(); // true
+```
 ## Native Prototypes
 * Each of the built-in native constructors has its own .prototype object — Array.prototype, String.prototype, etc.
 These objects contain behavior unique to their particular object subtype.
+Here’s a list of the most commonly used natives:
+• String()
+• Number()
+• Boolean()
+• Array()
+• Object()
+• Function()
+• RegExp()
+• Date()
+• Error()
+• Symbol()—added in ES6!
+* these natives are actually built-in functions
+* The result of the constructor form of value creation (new String("abc")) is an object wrapper around the primitive ("abc")
+value.
+```javascript
+var a = new String( "abc" );
+typeof a; // "object" ... not "String"
+```
+
+* JavaScript provides object wrappers around primitive values, known as natives (String, Number, Boolean, etc)
+* These object wrappers give the values access to behaviors appropriate for each object sub‐ type (String#trim() and Array#concat(..)).
+

@@ -46,3 +46,6 @@ how deep—without passing it explicitly through props.
 * In react assets can be images,stylesheet,fonts or any other file needed by your application
 *  SSR, React components are rendered to HTML on the server, and the visitor downloads the finished HTML code. 
 
+# Controlled components
+Controlled inputs accept their current value as a prop and a callback to change that value. 
+That implies that the value of the input has to live in the React state somewhere
