@@ -55,3 +55,13 @@ The value attribute in React allows an input field to be controlled by React sta
 * The displayed value is always determined by React state.
 * Any changes to the input field trigger an event that updates the state.
 * React fully controls the input's value instead of the browser.
+
+# Keeping Components Pure
+ a pure function is a function with the following characteristics:
+
+* It minds its own business. It does not change any objects or variables that existed before it was called.
+* Same inputs, same output. Given the same inputs, a pure function should always return the same result.
+
+# Understanding Your UI as a Tree
+React, and many other UI libraries, model UI as a tree. 
+
