@@ -49,3 +49,9 @@ how deep—without passing it explicitly through props.
 # Controlled components
 Controlled inputs accept their current value as a prop and a callback to change that value. 
 That implies that the value of the input has to live in the React state somewhere
+
+## Value attribute
+The value attribute in React allows an input field to be controlled by React state, meaning:
+* The displayed value is always determined by React state.
+* Any changes to the input field trigger an event that updates the state.
+* React fully controls the input's value instead of the browser.
