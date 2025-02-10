@@ -64,4 +64,8 @@ The value attribute in React allows an input field to be controlled by React sta
 
 # Understanding Your UI as a Tree
 React, and many other UI libraries, model UI as a tree. 
+# Adding Interactivity
+React lets you add event handlers to your JSX. Event handlers are your own functions that will be triggered in response to interactions like clicking, hovering, focusing form inputs, and so on.
+## Event propagation
+Event handlers will also catch events from any children your component might have. We say that an event “bubbles” or “propagates” up the tree: it starts with where the event happened, and then goes up the tree.
 
