@@ -135,4 +135,33 @@ is always a string:
             { a:2, b:function(){} }
             ); // "{"a":2}"
 ```
+Arrays have an overridden default toString() that stringifies as the (string) concatenation of all its values (each stringified themselves), with ","
+## ToNumber
+If any non-number value is used in a way that requires it to be a number, such as a mathematical operation, the ES5 spec defines the ToNumber abstract operation in section 9.3.
+* If valueOf() is available and it returns a primitive value, that value is used for the coercion. 
+* If not, toString() will provide the value for the coercion, if present.
+* If neither operation can provide a primitive value, a TypeError is thrown.
+```javascript
+var a = {
+ valueOf: function(){
+ return "42";
+ }
+};
+var b = {
+ toString: function(){
+ return "42";
+ }
+};
+
+Number( a ); // 42
+Number( b ); // 42
+```
+
+## ToBoolean
+### Falsy values
+* undefined
+* null
+* false
+* +0, -0, and NaN
+*  ""
 
