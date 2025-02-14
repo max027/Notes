@@ -106,7 +106,8 @@ Here’s a list of the most commonly used natives:
     value.
     ```javascript
     var a = new String( "abc" );
-    typeof a; // "object" ... not "String"
+    typeof a; // "object" ... not "String"
+
     ```
 
 * JavaScript provides object wrappers around primitive values, known as natives (String, Number, Boolean, etc)
@@ -122,7 +123,8 @@ is always a string:
     JSON.stringify( "42" ); // ""42"" (a string with a
                             // quoted string value in it)
     JSON.stringify( null ); // "null"
-    JSON.stringify( true ); // "true"
+    JSON.stringify( true ); // "true"
+
 ```
  The JSON.stringify(..) utility will automatically omit undefined, function, and symbol values when it comes across them
 ```javascript
@@ -133,11 +135,13 @@ is always a string:
             ); // "[1,null,null,4]"
     JSON.stringify(
             { a:2, b:function(){} }
-            ); // "{"a":2}"
+            ); // "{"a":2}"
+
 ```
 Arrays have an overridden default toString() that stringifies as the (string) concatenation of all its values (each stringified themselves), with ","
 ## ToNumber
-If any non-number value is used in a way that requires it to be a number, such as a mathematical operation, the ES5 spec defines the ToNumber abstract operation in section 9.3.
+If any non-number value is used in a way that requires it to be a number, such as a mathematical operation, the ES5 spec defines the ToNumber abstract operation in section 9.3.
+
 * If valueOf() is available and it returns a primitive value, that value is used for the coercion. 
 * If not, toString() will provide the value for the coercion, if present.
 * If neither operation can provide a primitive value, a TypeError is thrown.
@@ -165,3 +169,11 @@ Number( b ); // 42
 * +0, -0, and NaN
 *  ""
 
+# Explicit Coercion
+Explicit coercion refers to type conversions that are obvious and explicit
+* The ~ operator first “coerces” to a 32-bit number value, and then performs a bitwise negation (flipping each bit’s parity).
+
+## Explicitly: Parsing Numeric Strings
+Using parseInt on non-string value,If you pass a non-string, the value you pass will automatically be coerced to a string first , which would
+clearly be a kind of hidden implicit coercion. It’s a really bad idea to rely upon such behavior in your program, so never use par
+seInt(..) with a non-string value.

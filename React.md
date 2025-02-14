@@ -40,7 +40,26 @@ where this data is required.
 ## useContext
 Context lets the parent component make some information available to any component in the tree below it—no matter 
 how deep—without passing it explicitly through props.
+```javascript
+const ctx=createContext(undefined) // create context
+export default function DataProvider({children}){
+    const [Val,setVal]=useState("hello world")
+    return<ctx.Provider value={Val}>
+        {children}
+    </ctx.Provider>
 
+}
+
+export const useData=()=>useContext(DataContext) //wrap function to usecontext passing our context obj
+// wrap parent component in DataProvider conponent
+<DataProvider>
+<Parent/>
+</DataProvider>
+
+// In order to use ctx just import and call useData
+
+const val=useData()
+```
 
 # Assets
 * In react assets can be images,stylesheet,fonts or any other file needed by your application
@@ -96,4 +115,10 @@ State is local to a component instance on the screen. In other words, if you ren
 1. Triggering a render 
 2. Rendering the component 
 3. Committing to the DOM 
+
+# Rendering takes a snapshot in time 
+“Rendering” means that React is calling your component, which is a function. 
+* React waits until all code in the event handlers has run before processing your state updates. 
+* An updater function (e.g. n => n + 1) gets added to the queue.
+* Any other value (e.g. number 5) adds “replace with 5” to the queue, ignoring what's already queued.
 
