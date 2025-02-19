@@ -177,3 +177,49 @@ Explicit coercion refers to type conversions that are obvious and explicit
 Using parseInt on non-string value,If you pass a non-string, the value you pass will automatically be coerced to a string first , which would
 clearly be a kind of hidden implicit coercion. It’s a really bad idea to rely upon such behavior in your program, so never use par
 seInt(..) with a non-string value.
+
+# Implicit Coercion
+Implicit coercion refers to type conversions that are hidden, with nonobvious side effects that implicitly occur from other actions.
+
+## Implicitly: Strings <--> Numbers
+* You can coerce a number to a string simply by “adding” the number and the "" empty string:
+```javascript
+var a = 42;
+var b = a + "";
+b; // "42"
+```
+
+## Implicitly: * --> Boolean
+1. The test expression in an if (..) statement
+2. The test expression (second clause) in a for ( .. ; .. ; .. )
+header
+3. The test expression in while (..) and do..while(..) loops
+4. The test expression (first clause) in ? : ternary expressions
+5. The lefthand operand (which serves as a test expression—see
+below!) to the || (“logical or”) and && (“logical and”) operators
+
+Any value used in these contexts that is not already a boolean will be implicitly coerced to a boolean using the rules of the ToBoolean
+abstract operation
+
+Quoting the ES5 spec from section 11.11:
+
+***The value produced by a && or || operator is not necessarily of type
+Boolean. The value produced will always be the value of one of the
+two operand expressions.*** 
+
+```javascript
+var a = 42;
+var b = "abc";
+var c = null;
+a || b; // 42
+a && b; // "abc"
+c || b; // "abc"
+c && b; // null
+```
+For the || operator, if the test is true, the || expression results in the value of the first operand (a or c). If the test is false, the || expression results in the value of the second operand (b).
+
+Inversely, for the && operator, if the test is true, the && expression results in the value of the second operand (b). If the test is false, the && expression results in the value of the first operand (a or c).
+
+## Loose Equals Versus Strict Equals
+== allows coercion in the equality comparison and === disallows coercion.
+
