@@ -28,8 +28,13 @@ the parent when it is invoked.
 * There are situations where accessing the DOM directly is needed, and this is where 
 the useRef hook comes into play.
 *  Unlike useState, useRef doesn't trigger re-renders when its value changes.
+    * use-case
+        * Use useReducer when you have multiple pieces of state that depend on each other or on complex logic. For example, if you need to update several state variables together or perform calculations based on the state changes, useReducer might be a good choice.
 
-
+        * Use useReducer when you want to optimize performance by avoiding unnecessary re-renders or calculations
+    * dont's 
+        * Don’t use useReducer when you don’t need to perform any side effects or asynchronous operations based on the state changes.
+        * Don’t use useReducer when you don’t want to add extra boilerplate code for defining actions and reducers.
 ## State and useState
 * Data in component that determines behavior
 *  prop drilling is a situation where you are passing data from a parent to a child component,
@@ -60,6 +65,15 @@ export const useData=()=>useContext(DataContext) //wrap function to usecontext p
 
 const val=useData()
 ```
+
+## useReducer
+* The useState hook is best used on less complex data.
+* The useReducer hook is best used on more complex data, specifically, arrays or objects.
+## useCallback
+## useMemo
+
+# children prop
+In JSX expressions, the content between an opening and closing tag is passed as a unique prop called children. 
 
 # Assets
 * In react assets can be images,stylesheet,fonts or any other file needed by your application
