@@ -223,3 +223,93 @@ Inversely, for the && operator, if the test is true, the && expression results i
 ## Loose Equals Versus Strict Equals
 == allows coercion in the equality comparison and === disallows coercion.
 
+
+# Grammer
+Every expression in JS can be evaluated down to a single, specific value result.
+```javascript
+var a = 3 * 6;
+var b = a;
+b;
+```
+any regular { .. } block has a completion value of the completion value of its last contained statement/expression.
+```javascript
+var b;
+if (true) {
+ b = 4 + 38;
+}
+```
+If you typed that into your console/REPL, you’d probably see 42 reported, since 42 is the completion value of the if block, which took on the completion value of its last expression statement b = 4 + 38.
+## labeled statement
+```javascript
+{
+ foo: bar()
+}
+```
+foo is a label for the statement bar() (that has omitted its trailing ;
+
+```javascript
+// `foo` labeled-loop
+foo: for (var i=0; i<4; i++) {
+ for (var j=0; j<4; j++) {
+ // whenever the loops meet, continue outer loop
+ if (j == i) {
+ // jump to the next iteration of
+ // the `foo` labeled-loop
+ continue foo;
+ }
+ // skip odd multiples
+ if ((j * i) % 2 == 1) {
+ // normal (nonlabeled) `continue` of inner loop
+ continue;
+ }
+ console.log( i, j );
+ }
+}
+// 1 0
+// 2 0
+// 2 1
+// 3 0
+// 3 2
+```
+continue foo does not mean “go to the foo labeled position to continue,” but rather, “continue the loop that is labeled foo with its next iteration.” So, it’s not really an arbitrary goto.
+A label can apply to a nonloop block, but only break can reference such a nonloop label
+You can do a labeled break ___ out of any labeled block, but you cannot continue ___ a nonloop label, nor can you do a nonlabeled break out of a block
+
+```javascript
+[] + {}; // "[object Object]"
+{} + []; // 0
+```
+On the first line, {} appears in the + operator’s expression, and is therefore interpreted as an actual value (an empty object). [] is coerced to "" and thus {} is coerced to a string value as well: "[object Object]".
+But on the second line, {} is interpreted as a standalone {} empty block (which does nothing). Blocks don’t need semicolons to terminate them, so the lack of one here isn’t a problem. Finally, + [] is an
+expression that explicitly coerces the [] to a number, which is the 0 value.
+
+## else if and optional blocks
+It’s a common misconception that JavaScript has an else if clause,
+because you can do
+```javascript
+if (a) {
+ // ..
+}
+else if (b) {
+ // ..
+}
+else {
+ // ..
+}
+```
+But there’s a hidden characteristic of the JS grammar here: there is no else if. But if and else statements are allowed to omit the { }
+around their attached block if they only contain a single statement.
+
+```javascript
+if (a) {
+ // ..
+}
+else {
+ if (b) {
+ // ..
+ }
+ else {
+ // ..
+ }
+}
+```

@@ -11,6 +11,8 @@ A port in computing is a communication endpoint used for sending and receiving d
 # Route
 routes define how a server should handle incoming requests based on the URL path and HTTP method (e.g., GET, POST). They are crucial for building web applications and APIs.
 
+# Middleware
+Middleware are software tools that act as intermediaries between different applications, systems, or services, facilitating their communication and interaction. 
 
 # Mongodb
 ## What is ORM?
