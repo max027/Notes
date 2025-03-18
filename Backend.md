@@ -24,4 +24,28 @@ ORM is Object Relational Mapping, basically a technique to query or perform CRUD
 ODM is Object Document Mapping. It is like an ORM for non-relational databases or distributed databases such as MongoDB, i.e., mapping an object model and NoSQL database (document databases, graph database, etc.).
 
 
+# Http crash course
+metadata-key value pair sent along request and response
+* request-headers-> client
+* response-headers-> server
+* representational-headers-> encoding/compression
+* payload-headers-> data
+
+# Http methods
+* GET
+* POST
+* PUT
+* DELETE 
+* TRACE
+* PATCH
+* OPTIONS
+
+# Http status  
+* 1xx information
+* 2xx success
+* 3xx redirection
+* 4xx client errors
+* 5xx server errors
+
+
 
