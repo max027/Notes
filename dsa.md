@@ -87,6 +87,19 @@ Arrays are fixed sized collection of same type of element arrange continiguous i
 ## properties
 Arrays cant grows or shrink because They are fixed size, continiguous memory chunks
 
+// Todo
+# Dynamic arrays
+One limitation of arrays is that they're fixed size, meaning you need to specify the number of elements your array will hold ahead of time.
+
+* A dynamic array expands as you add more elements. So you don't need to determine the size ahead of time.
+
+## Size vs Capacity
+if you initialize dynamic array which can hold max 10 element and you add 4 element to that array then Capacity of that array is 10 while size is 4.
+
+## Doubling Appends
+What if we try to append an item but our array's capacity is already full?
+To make room, dynamic arrays automatically make a new, bigger underlying array. Usually twice as big.
+
 # Linked List
 ## Disadvantage of arrays
 * Insertion
@@ -201,7 +214,14 @@ trees are a type of data structure used to represent hierarchical relationships
 * Height
     * The length of the longest path from a node to a leaf node.
 
+## Application
+* file system
+* js dom
+* compiler(ast)
+
 # Traversal
 * pre order
 * post order
 * in order
+
+# Heap
