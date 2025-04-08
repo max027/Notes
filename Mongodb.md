@@ -13,10 +13,22 @@ Mongodb is a document base database used for scalability and flexibility.MongoDB
                     |----documents
 ```
 A record in MongoDB is a document, which is a data structure composed of field and value pairs. MongoDB documents are similar to JSON objects. The values of fields may include other documents, arrays, and arrays of documents.
-
+* Cluster-A Cluster is the top-level MongoDB deployment. It can be a single server or multiple servers working together (replica sets, sharded clusters).
+* Database-A Database is a container for collections. It’s like a folder where you store your data.
+* collection-A Collection is like a table in relational databases — it holds multiple documents.
+* Document-A Document is a single record stored in a collection — like a row in SQL, but stored as a JSON-like object (BSON)
+# View
+Views in MongoDB are read-only, and they return a collection in much the same way as a find() or aggregation() would. They are similar to views in relational databases.
+## Restrictions
+* You must create views in the same database as the source collection.
+* A view definition pipeline cannot include the $out or the $merge stage.
+* This restriction also applies to embedded pipelines, such as pipelines used in $lookup or $facet stages.
+* You cannot rename a view once it is created.
+You cannot rename a view once it is created.
 # Commands
 * show dbs- shows all database's in a cluster
 * use db_nam- select particular database from cluster to perform operations
+
 
 # CRUD operations on Mongodb database
 ## Create
@@ -133,3 +145,11 @@ To delete multiple document
 ```MongoDB shell
 db.inventory.deleteMany( { status: "D" } )
 ```
+
+# Aggregation Pipeline
+An aggregation pipeline consists of one or more stages that process documents:
+* Each stage performs an operation on the input documents. For example, a stage can filter documents, group documents, and calculate values.
+* The documents that are output from a stage are passed to the next stage.
+* An aggregation pipeline can return results for groups of documents. For example, return the total, average, maximum, and minimum values.
+
+
