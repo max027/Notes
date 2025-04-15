@@ -9,10 +9,25 @@ When your backend processes a request, it usually interacts with the following:
 A port in computing is a communication endpoint used for sending and receiving data between devices, processes, or applications.
 
 # Route
-routes define how a server should handle incoming requests based on the URL path and HTTP method (e.g., GET, POST). They are crucial for building web applications and APIs.
+Routes define the endpoints your backend exposes. Each route corresponds to a specific URL and HTTP method (like GET, POST, PUT, DELETE).
+
+# Controller
+Controllers contain the logic of what to do when a route is hit — like fetching from DB, updating, or sending back a response.
 
 # Middleware
-Middleware are software tools that act as intermediaries between different applications, systems, or services, facilitating their communication and interaction. 
+Middleware are functions that run before the controller — they can modify the request/response, validate data, check auth, etc.
+
+# Model
+Models define how your data looks and interacts with the database (usually MongoDB with Mongoose in Node).
+
+# Access Token
+Grants short-term access to protected resources (APIs, routes).
+
+# Referesh Token
+Used to get a new Access Token when it expires.
+
+# Secure cookies
+A cookie (also known as a web cookie or browser cookie) is a small piece of data a server sends to a user's web browser. The browser may store cookies, create new cookies, modify existing ones, and send them back to the same server with later requests.
 
 # Mongodb
 ## What is ORM?
@@ -51,3 +66,6 @@ metadata-key value pair sent along request and response
 
 # Nodejs
 nodejs is wrapper around javascript v8 engine.
+
+
+    
