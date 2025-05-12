@@ -36,6 +36,30 @@ let v: Vec<i32> = Vec::new();
 let v = vec![1, 2, 3];
 ```
 
+## Structs
+There are three types of structures ("structs") that can be created using the struct keyword:
+* Tuple structs, which are, basically, named tuples.
+* The classic C structs
+* Unit structs, which are field-less, are useful for generics.
+```rust
+// An attribute to hide warnings for unused code.
+#![allow(dead_code)]
+
+#[derive(Debug)]
+struct Person {
+    name: String,
+    age: u8,
+}
+
+// A unit struct
+struct Unit;
+
+// A tuple struct
+struct Pair(i32, f32);
+
+
+```
+
 
 
 ## Generic type
