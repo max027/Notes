@@ -126,3 +126,9 @@ Middleware functions can perform the following tasks:
     * Call the next middleware in the stack.
 If the current middleware function does not end the request-response cycle, it must call next() to pass control to the next middleware function. Otherwise, the request will be left hanging.
 
+
+# Typescript
+
+## Namespace
+Namespaces are a TypeScript-specific way to organize code.Namespaces are simply named JavaScript objects in the global namespace
+

@@ -12,6 +12,32 @@ accomplish some purpose.
 * Each type implementing a trait must provide its own custom behavior for the body of the method.
 
 
+## Enums
+enums give you a way of saying a value is one of a possible set of values. For example, we may want to say that Rectangle is one of a set of possible shapes that also includes Circle and Triangle.
+```rust
+enum WebEvent {
+    // An `enum` variant may either be `unit-like`,
+    PageLoad,
+    PageUnload,
+    // like tuple structs,
+    KeyPress(char),
+    Paste(String),
+    // or c-like structures.
+    Click { x: i64, y: i64 },
+}
+
+```
+
+## Vectors
+Vectors allow you to store more than one value in a single data structure that puts all the values next to each other in memory. Vectors can only store values of the same type. They are useful when you have a list of items, such as the lines of text in a file or the prices of items in a shopping cart.
+```rust
+let v: Vec<i32> = Vec::new();
+
+let v = vec![1, 2, 3];
+```
+
+
+
 ## Generic type
 * We use generics to create definitions for items like function signatures or structs, which we can then use
 with many different concrete data types

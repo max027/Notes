@@ -313,3 +313,42 @@ else {
  }
 }
 ```
+
+
+# Async and Performance 
+
+## A Program in Chunks
+You may write your JS program in one .js file, but your program is almost certainly comprised of several chunks, only one of
+which is going to execute now, and the rest of which will execute later
+
+## Async Console
+There is no specification or set of requirements around how the console.* methods work -- they are not officially part of JavaScript, but are instead added to JS by the hosting environment
+
+## Event Loop
+The JS engine doesn't run in isolation. It runs inside a hosting environment, which is for most developers the typical web browser
+Let's conceptualize it first through some fake-ish code:
+```javascript
+// `eventLoop` is an array that acts as a queue (first-in, first-out)
+var eventLoop = [ ];
+var event;
+// keep going "forever"
+while (true) {
+    // perform a "tick"
+    if (eventLoop.length > 0) {
+        // get the next event in the queue
+        event = eventLoop.shift();
+        // now, execute the next event
+        try {
+            event();
+        }
+        catch (err) {
+            reportError(err);
+        }
+    }
+}
+```
+As you can see, there's a continuously running loop represented by the while loop, and each iteration of this loop is called
+a "tick." For each tick, if an event is waiting on the queue, it's taken off and executed. These events are your function
+callbacks.
+
+
