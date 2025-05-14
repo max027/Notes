@@ -60,13 +60,71 @@ struct Pair(i32, f32);
 
 ```
 
+## Result Enums
+```rust
+enum Result<T, E> {
+    Ok(T),   // Success case (contains a value of type T)
+    Err(E),  // Error case (contains an error of type E)
+}
+```
+### Propagating Errors
+When a function’s implementation calls something that might fail, instead of handling the error within the function itself you can return the error to the calling code so that it can decide what to do. This is known as propagating the error and gives more control to the calling code, where there might be more information or logic that dictates how the error should be handled than what you have available in the context of your code.
+### Where The ? Operator Can Be Used
+The ? operator can only be used in functions whose return type is compatible with the value the ? is used on. This is because the ? operator is defined to perform an early return of a value out of the function,
+
+
 
 
 ## Generic type
 * We use generics to create definitions for items like function signatures or structs, which we can then use
 with many different concrete data types
+```rust
+//function
+fn largest<T:std::cmp::partialOrd>(list: &[T]) -> &T {
+    let mut largest = &list[0];
 
+    for item in list {
+        if item > largest {
+            largest = item;
+        }
+    }
 
+    largest
+}
+
+struct Point<T> {
+    x: T,
+    y: T,
+}
+
+enum Option<T> {
+    Some(T),
+    None,
+}
+
+impl<T> Point<T> {
+    fn x(&self) -> &T {
+        &self.x
+    }
+}
+```
+
+## Traits
+A trait defines the functionality a particular type has and can share with other types. We can use traits to define shared behavior in an abstract way. We can use trait bounds to specify that a generic type can be any type that has certain behavior.
+```rust
+pub trait Summary {
+    fn summarize(&self) -> String;
+}
+
+impl Summary for NewsArticle {
+    fn summarize(&self) -> String {
+        format!("{}, by {} ({})", self.headline, self.author, self.location)
+    }
+}
+```
+
+# Lifetimes
+only references have lifetimes
 ## Validating References with Lifetimes
 * Rather than ensuring that a type has the behavior we want, lifetimes ensure that references are valid as long 
 as we need them to be.
