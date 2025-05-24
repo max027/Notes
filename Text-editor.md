@@ -21,3 +21,15 @@ his happens at three crucial moments:
 * After each keypress: To respond to the user's actions.
 * Before exiting: To clean up our workspace and leave a tidy farewell message.
 
+# Unicode 
+Unicode! Unicode is an encoding system that solves the space issue of ASCII. Like ASCII, Unicode assigns a unique code, called a code point, to each character.
+
+# Buffer
+A Buffer is a common structure that holds everything a text editor needs to modify and display a text file. A View interacts with the Buffer to render it on the screen. In many text editors, you can easily switch from one Buffer to the next, allowing you to open multiple files in parallel
+**String in Rust manages internally, using a structure known as a Vector, or Vec. Inside a String, there's a Vec<u8>—a vector of bytes, essentially.**
+
+## Rust addresses common memory management challenges at the compiler level:
+* It prevents writing beyond allocated memory.
+* It manages pointers carefully to avoid errors like modifying data through one pointer and accessing outdated data with another.
+* Rust's ownership model, including Move Semantics, tracks and manages pointers effectively, reducing errors from outdated or conflicting data accesses.
+
