@@ -19,4 +19,22 @@ O(n), O(n2) and O(n). Thus, the total time complexity is O(n2)
 
 * An algorithm is polynomial if its time complexity is at most O(nk) where k is a constant.
 
+# Sorting 
+## Inversions
+a pair of array elements (array[a], array[b]) such that a < b and array[a] > array[b], i.e., the elements are in the wrong order.
+*  An array is completely sorted when there are no inversions.
+
+## merge sort
+Merge sort sorts a subarray array[a . . . b] as follows:
+1. If a = b, do not do anything, because the subarray is already sorted.
+2. Calculate the position of the middle element: k = b(a + b)/2.
+3. Recursively sort the subarray array[a . . . k].
+4. Recursively sort the subarray array[k + 1 . . . b]
+5. Merge the sorted subarrays array[a . . . k] and array[k + 1 . . . b] into a sorted subarray array[a . . . b].
+
+## counting sort
+The lower bound n log n does not apply to algorithms that do not compare array elements but use some other information.
+An example of such an algorithm is counting sort that sorts an array in O(n) time assuming that every element in the array is an integer between 0 . . . c and c = O(n). 
+
+
 
