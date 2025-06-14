@@ -75,4 +75,39 @@ An interpreter is another common kind of language processor. Instead of producin
                 |
             target-machine code
 ```
+# History of compiler
+First-generationlanguages are the machine languages, second-generation the assembly languages,
+and third-generation the higher-level languages like Fortran, Cobol, Lisp, C,
+C++, C#, and Java. Fourth-generation languages are languages designedfor specic applications like NOMAD for report generation, SQL for database
+queries, and Postscript for text formatting.
+
+* Another classication of languages uses the term imperative for languages in which a program species how a computation is to be done and declarative
+for languages in which a program species what computation is to be done.
+Languages such as C, C++, C#, and Java are imperative languages
+
+* The term von Neumann language is applied to programming languages
+whose computational model is based on the von Neumann computer architecture. Many of today's languages, such as Fortran and C are von Neumannlanguages 
+
+
+# programming language basics
+## Static/Dynamic distinction
+* If a language uses a policy that allows the compiler to decide an issue, then we say that the language uses a static policy or that the issue can be decided at compile
+time.
+* 	a policy that only allows a decision to be made when we execute the program is said to be a dynamic policy or to require a decision at run time.
+
+## Environment and state
+* The environment is a mapping from names to locations in the store. Since variables refer to locations ("l-values" in the terminology of C), we could alternatively define an environment as a mapping from names to variables.
+* The state is a mapping from locations in store to their values. That is, the state maps l-values to their corresponding r-values, in the terminology of C.
+* Static versus dynamic binding of names to locations. Most binding of names to locations is dynamic, and we discuss several approaches to this binding throughout the section
+* Static versus dynamic binding of locations to values. The binding of locations to values is generally dynamic as well, since we cannot tell the value in a location until we run the program. Declared constants are an exception.
+
+## Names ,Identifiers ,Variables
+Although the terms "name" and "variable," often refer to the same thing, we use them carefully to distinguish between compile-time names and the
+run-time locations denoted by names.
+
+* Although the terms "name" and "variable," often refer to the same thing, we use them carefully to distinguish between compile-time names and the
+run-time locations denoted by names.
+* A variable refers to a particular location of the store. It is common for the same identifier to be declared more than once; each such declaration
+introduces a new variable.
+* Even if you write a variable (like x) only once in your code, if it's declared inside a recursive function, it will point to a new memory location each time the function is called.
 
