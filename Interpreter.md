@@ -111,3 +111,27 @@ run-time locations denoted by names.
 introduces a new variable.
 * Even if you write a variable (like x) only once in your code, if it's declared inside a recursive function, it will point to a new memory location each time the function is called.
 
+## Procedure ,Function and Method
+A function generally returns a value of some type (the "return type"),while a procedure does not return any value.
+
+C and similar languages, which have only functions, treat procedures as functions that have a special return type "void", to signify no return value.
+
+## static scope and block Structure
+The scope rules for C are based on program structure the scope of a declaration is determined implicitly by where the declaration appears in the program.
+
+a block is a grouping of declarations and statements. C uses braces { and} to delimit a block; the alternative use of begin and end for the same purpose dates back to Algol.
+
+* The scope of a top-level declaration of a name x consists of the entire program that follows, with the exception of those statements that lie within a function that also has a declaration of x. 
+
+In C, the syntax of blocks is given by
+1. One type of statement is a block. Blocks can appear anywhere that other
+types of statements, such as assignment statements, can appear.
+2. A block is a sequence of declarations followed by a sequence of statements,
+all surrounded by braces.
+
+* We say that a declaration D "belongs" to a block B if B is the most closelynested block containing D; that is, D is located within B, but not within anyblock that is nested within B
+
+## Dynamic scope
+The term dynamic scope, however, usually refers to the following policy: a use of a name x refers to the declaratn
+of x in the most recently called, not-yet-terminated, procedure with such declaration
+
