@@ -135,3 +135,26 @@ all surrounded by braces.
 The term dynamic scope, however, usually refers to the following policy: a use of a name x refers to the declaratn
 of x in the most recently called, not-yet-terminated, procedure with such declaration
 
+
+# A simple syntax directed translation
+```text
+if ( expression ) statement else statement
+```
+ if-else statement is the concatenation of the keyword if, an opening parenthesis, an expression, a closing parenthesis, a statement, the keywordelse, and another statement. Using the variable expr to denote an expression and the variable stmt to denote a statement, this structuring rule can be expressed as
+ ```text
+ stmt -> if ( expr ) stmt else stmt
+ ```
+in which the arrow may be read as "can have the form." Such a rule is called aproduction. In a production, lexical elements like the keyword if and the parentheses are called terminals. Variables like expr and stmt represent sequences of
+terminals and are called nonterminals.
+## Defination of grammer
+A context-free grammar has four components:
+1. A set of terminal symbols, sometimes referred to as "tokens." The terminals are the elementary symbols of the language dened by the grammar.
+2. A set of nonterminals, sometimes called "syntactic variables." Each nonterminal represents a set of strings of terminals, in a manner we shall describe.
+3. A set of productions, where each production consists of a nonterminal,
+called the head or left side of the production, an arrow, and a sequence of terminals and/or nonterminals, called the body or right side of the production.
+4. A designation of one of the nonterminals as the start symbol.
+
+## Token vs Terminals
+The lexical analyzer reads the characters of the source program, groups them into lexically meaningful units called lexemes, and produces as output tokens representing these lexemes.A token consists of two
+components, a token name and an attribute value
+
