@@ -158,3 +158,8 @@ called the head or left side of the production, an arrow, and a sequence of term
 The lexical analyzer reads the characters of the source program, groups them into lexically meaningful units called lexemes, and produces as output tokens representing these lexemes.A token consists of two
 components, a token name and an attribute value
 
+## Derivation
+A grammar derives strings by beginning with the start symbol and repeatedlyreplacing a nonterminal by the body of a production for that nonterminal.
+* Parsing is the problem of taking a string of terminals and guring out how to derive it from the start symbol of the grammar, and if it cannot be derived from the start symbol of the grammar, then reporting syntax errors within the string
+
+
