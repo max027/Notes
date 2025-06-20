@@ -159,7 +159,23 @@ The lexical analyzer reads the characters of the source program, groups them int
 components, a token name and an attribute value
 
 ## Derivation
-A grammar derives strings by beginning with the start symbol and repeatedlyreplacing a nonterminal by the body of a production for that nonterminal.
+A grammar derives strings by beginning with the start symbol and repeatedly replacing a nonterminal by the body of a production for that nonterminal.
 * Parsing is the problem of taking a string of terminals and guring out how to derive it from the start symbol of the grammar, and if it cannot be derived from the start symbol of the grammar, then reporting syntax errors within the string
 
+## Parse Tree 
+A parse tree pictorially shows how the start symbol of a grammar derives astring in the language
+Formally, given a context-free grammar, a parse tree according to the grammar is a tree with the following properties:
+1. The root is labeled by the start symbol.
+2. Each leaf is labeled by a terminal or by .
+3. Each interior node is labeled by a nonterminal.
+4. If A is the nonterminal labeling some interior node and X1,X2,..,Xn are the labels of the children of that node from left to right, then there must be a production A->X1X2X3...Xn.  
 
+## Ambiguity
+We have to be careful in talking about the structure of a string according to agrammar. A grammar can have more than one parse tree generating a givenstring of terminals. Such a grammar is said to be ambiguous.
+* Since a string with more than one parse tree usually has more than one meaning, we need to design unambiguous grammars for compiling applications, or to use ambiguous grammars with additional rules to resolve the ambiguities.
+
+## Associativity of Operator
+We say that the operator + associates to the left, because an operand with plus signs on both sides of it belongs to the operator to its left.
+
+## Precedence of Operator
+    
