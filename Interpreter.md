@@ -180,6 +180,7 @@ We say that the operator + associates to the left, because an operand with plus 
 
 ## Syntax-Directed Translation
 Syntax-directed translation is done by attaching rules or program fragments to productions in a grammar.
+* Syntax-Directed Translation is a method in compiler design where grammar rules are associated with actions (called semantic rules) that specify how to translate or evaluate a program based on its syntax.
 
 ## attribute's
 attributes are special annotations or metadata that provide extra information to the compiler about how to handle certain parts of your code.
@@ -202,4 +203,20 @@ A synthesized attribute is an attribute whose value is computed from the attribu
 * A syntax-directed definition associates
     1. With each grammar symbol, a set of attributes, and
     2. With each production, a set of semantic rules for computing the values often the attributes associated with the symbols appearing in the production.
+
+## Syntax Directed Defination
+```text
+PRODUCTION                      SEMANTIC RULE
+expr -> expr1 + term     expr.t = expr1.t || term.t || '+'
+```
+For above The following important property: the string representing the translation of the nonterminal at the head of each production is the concatenation of the translations of the nonterminals
+in the production body, in the same order as in the production, with some optional additional strings interleaved.
+
+Here the translation expr.t is the concatenation of the translations of expr1 and term, followed by the symbol +.
+
+* Program fragments embedded within production bodies are called semantic actions. The position at which an action is to be executed is shown by enclosing it between curly braces and writing it within the production body, as in
+```text
+rest -> + term {print('+')} rest1
+```
+
 
