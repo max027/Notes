@@ -177,5 +177,29 @@ We have to be careful in talking about the structure of a string according to ag
 ## Associativity of Operator
 We say that the operator + associates to the left, because an operand with plus signs on both sides of it belongs to the operator to its left.
 
-## Precedence of Operator
-    
+
+## Syntax-Directed Translation
+Syntax-directed translation is done by attaching rules or program fragments to productions in a grammar.
+
+## attribute's
+attributes are special annotations or metadata that provide extra information to the compiler about how to handle certain parts of your code.
+Examples of attributes are data types of expressions, the number of instructions in the generated code, or the location of the instruction in the generated code for a construct, among many other possibilities
+
+## (Syntax-directed) translation schema
+a translation schema (or syntax-directed translation schema) is a formal way to specify how to translate a source program into some target form — such as machine code, intermediate code, or even another language — based on its grammar.
+
+
+## Postfix Notation
+Postfix Notation, also known as Reverse Polish Notation (RPN), is a way of writing arithmetic expressions without parentheses and operators follow their operands.
+
+The postfix notation for an expression E can be defined inductively as follows:
+1. If E is a variable or constant, then the post x notation for E is E itself.
+2. If E is an expression of the form E1 op E2, where op is any binary operator, then the post x notation for E is E1' E2' op, where E1 and E2 are the postfix notation for E1 and E2.
+3. If E is a parenthesized expression of the form (E1), then the postix notation for E is the same as the post x notation for E1.
+
+## Synthesized Attributes
+A synthesized attribute is an attribute whose value is computed from the attributes of its children in the parse tree.
+* A syntax-directed definition associates
+    1. With each grammar symbol, a set of attributes, and
+    2. With each production, a set of semantic rules for computing the values often the attributes associated with the symbols appearing in the production.
+
