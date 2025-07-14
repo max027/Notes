@@ -22,18 +22,16 @@ Let \( f: D \to \mathbb{R} \) be a function defined on a domain \( D \subseteq \
 
 ### Increasing Function
 The function \( f \) is **increasing** on an interval \( I \subseteq D \) if  
-\[
+$$
 \text{for all } x_1, x_2 \in I, \text{ if } x_1 < x_2 \text{ then } f(x_1) \leq f(x_2).
-\]
-
+$$
 If the inequality is strict (\( f(x_1) < f(x_2) \)), then \( f \) is **strictly increasing**.
 
 ### Decreasing Function
 The function \( f \) is **decreasing** on an interval \( I \subseteq D \) if  
-\[
+$$
 \text{for all } x_1, x_2 \in I, \text{ if } x_1 < x_2 \text{ then } f(x_1) \geq f(x_2).
-\]
-
+$$
 If the inequality is strict (\( f(x_1) > f(x_2) \)), then \( f \) is **strictly decreasing**.
 
 
@@ -47,9 +45,9 @@ for the function as. y= f(x)=mx+b
 
 ## polynomial function
 A function P is called a polynomial if
-\[
+$$
 f(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_2 x^2 + a_1 x + a_0
-\]
+$$
 where:
 
 - \( n \) is a non-negative integer (the degree of the polynomial),
