@@ -136,90 +136,6 @@ The term dynamic scope, however, usually refers to the following policy: a use o
 of x in the most recently called, not-yet-terminated, procedure with such declaration
 
 
-# A simple syntax directed translation
-```text
-if ( expression ) statement else statement
-```
- if-else statement is the concatenation of the keyword if, an opening parenthesis, an expression, a closing parenthesis, a statement, the keywordelse, and another statement. Using the variable expr to denote an expression and the variable stmt to denote a statement, this structuring rule can be expressed as
- ```text
- stmt -> if ( expr ) stmt else stmt
- ```
-in which the arrow may be read as "can have the form." Such a rule is called aproduction. In a production, lexical elements like the keyword if and the parentheses are called terminals. Variables like expr and stmt represent sequences of
-terminals and are called nonterminals.
-## Defination of grammer
-A context-free grammar has four components:
-1. A set of terminal symbols, sometimes referred to as "tokens." The terminals are the elementary symbols of the language dened by the grammar.
-2. A set of nonterminals, sometimes called "syntactic variables." Each nonterminal represents a set of strings of terminals, in a manner we shall describe.
-3. A set of productions, where each production consists of a nonterminal,
-called the head or left side of the production, an arrow, and a sequence of terminals and/or nonterminals, called the body or right side of the production.
-4. A designation of one of the nonterminals as the start symbol.
-
-## Token vs Terminals
-The lexical analyzer reads the characters of the source program, groups them into lexically meaningful units called lexemes, and produces as output tokens representing these lexemes.A token consists of two
-components, a token name and an attribute value
-
-## Derivation
-A grammar derives strings by beginning with the start symbol and repeatedly replacing a nonterminal by the body of a production for that nonterminal.
-* Parsing is the problem of taking a string of terminals and guring out how to derive it from the start symbol of the grammar, and if it cannot be derived from the start symbol of the grammar, then reporting syntax errors within the string
-
-## Parse Tree 
-A parse tree pictorially shows how the start symbol of a grammar derives astring in the language
-Formally, given a context-free grammar, a parse tree according to the grammar is a tree with the following properties:
-1. The root is labeled by the start symbol.
-2. Each leaf is labeled by a terminal or by .
-3. Each interior node is labeled by a nonterminal.
-4. If A is the nonterminal labeling some interior node and X1,X2,..,Xn are the labels of the children of that node from left to right, then there must be a production A->X1X2X3...Xn.  
-
-## Ambiguity
-We have to be careful in talking about the structure of a string according to agrammar. A grammar can have more than one parse tree generating a givenstring of terminals. Such a grammar is said to be ambiguous.
-* Since a string with more than one parse tree usually has more than one meaning, we need to design unambiguous grammars for compiling applications, or to use ambiguous grammars with additional rules to resolve the ambiguities.
-
-## Associativity of Operator
-We say that the operator + associates to the left, because an operand with plus signs on both sides of it belongs to the operator to its left.
-
-
-## Syntax-Directed Translation
-Syntax-directed translation is done by attaching rules or program fragments to productions in a grammar.
-* Syntax-Directed Translation is a method in compiler design where grammar rules are associated with actions (called semantic rules) that specify how to translate or evaluate a program based on its syntax.
-
-## attribute's
-attributes are special annotations or metadata that provide extra information to the compiler about how to handle certain parts of your code.
-Examples of attributes are data types of expressions, the number of instructions in the generated code, or the location of the instruction in the generated code for a construct, among many other possibilities
-
-## (Syntax-directed) translation schema
-a translation schema (or syntax-directed translation schema) is a formal way to specify how to translate a source program into some target form — such as machine code, intermediate code, or even another language — based on its grammar.
-
-
-## Postfix Notation
-Postfix Notation, also known as Reverse Polish Notation (RPN), is a way of writing arithmetic expressions without parentheses and operators follow their operands.
-
-The postfix notation for an expression E can be defined inductively as follows:
-1. If E is a variable or constant, then the post x notation for E is E itself.
-2. If E is an expression of the form E1 op E2, where op is any binary operator, then the post x notation for E is E1' E2' op, where E1 and E2 are the postfix notation for E1 and E2.
-3. If E is a parenthesized expression of the form (E1), then the postix notation for E is the same as the post x notation for E1.
-
-## Synthesized Attributes
-A synthesized attribute is an attribute whose value is computed from the attributes of its children in the parse tree.
-* A syntax-directed definition associates
-    1. With each grammar symbol, a set of attributes, and
-    2. With each production, a set of semantic rules for computing the values often the attributes associated with the symbols appearing in the production.
-
-## Syntax Directed Defination
-```text
-PRODUCTION                      SEMANTIC RULE
-expr -> expr1 + term     expr.t = expr1.t || term.t || '+'
-```
-For above The following important property: the string representing the translation of the nonterminal at the head of each production is the concatenation of the translations of the nonterminals
-in the production body, in the same order as in the production, with some optional additional strings interleaved.
-
-Here the translation expr.t is the concatenation of the translations of expr1 and term, followed by the symbol +.
-
-* Program fragments embedded within production bodies are called semantic actions. The position at which an action is to be executed is shown by enclosing it between curly braces and writing it within the production body, as in
-```text
-rest -> + term {print('+')} rest1
-```
-
-
 # Scanner
 ## Finite automata
 A finite automaton (FA) is a simple idealized machine used to recognize patterns within input taken from some character set (or alphabet) C. The job of an FA is to accept or reject an input depending on whether the pattern defined by the FA occurs in the input.
@@ -231,4 +147,9 @@ a word’s part of speech in English. Each time it is called, the scanner produc
 scanner and category is its syntactic category. This pair is sometimes called a token.
 
 
+To translate a program, the compiler must understand both its lexical structure—the spellings of the words in the program—and its syntactic
+structure—the grammatical way that words fit together to form statements and programs
+
+
+To find and classify words, the scanner applies a set of rules that describe the lexical structure of the input programming language, sometimes called its microsyntax.
 
