@@ -137,10 +137,6 @@ of x in the most recently called, not-yet-terminated, procedure with such declar
 
 
 # Scanner
-## Finite automata
-A finite automaton (FA) is a simple idealized machine used to recognize patterns within input taken from some character set (or alphabet) C. The job of an FA is to accept or reject an input depending on whether the pattern defined by the FA occurs in the input.
-Think of a robot with a few states in its brain. It reads one letter at a time (like 'a', 'b', or '0', '1') from a string and changes its state based on what it reads. In the end, the robot decides: ✅ "I accept this string" or ❌ "I reject it".
-
 ## Overview
 A compiler’s scanner reads the input stream and produces, as output, a stream of words, each labeled with its syntactic category—equivalent to
 a word’s part of speech in English. Each time it is called, the scanner produces Lexeme a pair, lexeme,category, where lexeme is the spelling of the word the actual text for a word recognized by a
@@ -152,4 +148,14 @@ structure—the grammatical way that words fit together to form statements and p
 
 
 To find and classify words, the scanner applies a set of rules that describe the lexical structure of the input programming language, sometimes called its microsyntax.
+
+## Finite automata
+A finite automaton (FA) is a simple idealized machine used to recognize patterns within input taken from some character set (or alphabet) C. The job of an FA is to accept or reject an input depending on whether the pattern defined by the FA occurs in the input.
+Think of a robot with a few states in its brain. It reads one letter at a time (like 'a', 'b', or '0', '1') from a string and changes its state based on what it reads. In the end, the robot decides: ✅ "I accept this string" or ❌ "I reject it".
+
+Formally, a finite automaton (FA) is a five-tuple (S,sigma , δ, s0, SA), where
+
+
+
+
 

@@ -38,3 +38,44 @@ An example of such an algorithm is counting sort that sorts an array in O(n) tim
 
 
 
+# Math
+
+
+# Bitwise operator trick
+
+## even and odd
+```
+x&1==1
+```
+
+## is power of 2
+```
+x&(x-1)==0
+```
+does not work for x==0
+
+## multiply or divide by 2^k
+eg 10/2 where 2 is 2^1
+```
+x/2  ---- x>>1
+x/4 ----- x>>2
+x/2^k --- x>>k
+
+x*2^k ---- x<<k
+```
+
+## swap two variable without temp variable
+```
+x=x ^ y
+y=x ^ y
+x=x ^ y
+```
+## 
+```
+if x==a
+    then x=b
+if x==b
+    then x=a
+
+x= a ^ b ^ a
+```

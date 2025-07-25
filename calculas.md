@@ -55,3 +55,11 @@ where:
 - \( a_n \neq 0 \) (leading coefficient),
 - \( x \) is the variable.
 
+## Transformation
+Vertical and Horizontal Shifts Suppose c . 0. To obtain the graph of
+y − f(x)+c, shift the graph of y − f(x) a distance c units upward
+y − f(x)- c, shift the graph of y − f(x) a distance c units downward
+y − f(x-c), shift the graph of y − f(x) a distance c units to the right
+y − f(x+c), shift the graph of y − f(x) a distance c units to the left
+
+
